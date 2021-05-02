@@ -1,16 +1,20 @@
 import React, { useState, useCallback, useEffect } from "react";
 import Moment from "moment";
 
+// ---- Components
 import Calendar from "./components/Calendar";
 import Header from "./components/Header";
 import Column from "./components/Column";
 import Button from "./components/Button";
+import H1 from "./components/H1";
 import WeekDays from "./components/WeekDays";
 import MonthDays from "./components/MonthDays";
 import ErrorBoundary from "./components/ErrorBoundary";
 
+// ---- Scss styles
 import "./styles.scss";
 
+// ---- Demo events
 import jsonDataDemo from "./storage/demo";
 
 // ---- spanish calendar
@@ -25,7 +29,7 @@ function App() {
 
   useEffect(() => setdata(JSON.parse(jsonDataDemo)), []);
 
-  // next prev buttons
+  // next prev and today buttons
   const next = useCallback(() => {
     setMonth(month.clone().add(1, "month"));
   }, [month]);
@@ -49,7 +53,7 @@ function App() {
             <Button onClick={next} icon="fa fa-arrow-right" text="Siguiente" />
           </Column>
           <Column align="center">
-            <h1>{month.format("MMMM")}</h1>
+            <H1>{month.format("MMMM")}</H1>
           </Column>
           <Column align="right">
             {Moment().format("dddd")} {Moment().format("LL")}

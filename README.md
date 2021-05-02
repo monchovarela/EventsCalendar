@@ -1,2 +1,5 @@
 # EventsCalendar
-Created with CodeSandbox
+
+Calendario con eventos simple.
+
+Creado con CodeSandbox
